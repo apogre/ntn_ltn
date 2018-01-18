@@ -1,6 +1,6 @@
 import logictensornetworks as ltn
 import tensorflow as tf
-from load_data import get_dictionary, get_training_data
+from load_data import get_dictionary, get_training_data, get_feed
 import numpy as np
 import sys
 
@@ -54,3 +54,5 @@ for i in range(num_iterations):
         sess.run(init)
     if i > 1:
         KB.restore(sess)
+
+    feed_dict = get_feed(data, num_relations)
